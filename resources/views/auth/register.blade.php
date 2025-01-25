@@ -69,7 +69,7 @@
                 </div>
 
                 {{-- submit button --}}
-                <button class="rounded-l p-1 bg-emerald-600 text-white mt-2">Register</button>
+                <button class="rounded p-1 bg-emerald-600 text-white mt-2">Register</button>
             </form>
 
         </div>

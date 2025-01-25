@@ -29,17 +29,41 @@ class authController extends Controller
     }
 
     public function login(Request $request){
+
+        //validating the inputs
         $fields = $request->validate([
             'email' => ['required', 'max:255', 'email'],
             'password' => ['required']
         ]);
 
+        //attempting to log in
         if(Auth::attempt($fields, $request->remember)){
-            return redirect()->route('welcome');
+            return redirect()->intended('dashboard');
         }else{
+
+            //returning login failed message
             return back()->withErrors(
                 ['failed'=>"The Email and Password did'nt match"]
             );
         }
+    }
+
+
+    //LogOut User
+    public function logout(Request $request){
+        
+        //logging out
+        Auth::logout();
+
+        //invalidating sessions
+        $request->session()->invalidate();
+
+        //regenarating CSRF token
+        $request->session()->regenerateToken();
+
+        //redirecting to the welcome/home page
+        return redirect()->route('welcome');
+
+
     }
 }

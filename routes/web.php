@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\authController;
+use App\Http\Controllers\dashboardController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -24,3 +25,13 @@ Route::get('/login',function(){
 })->name('login');
 
 Route::post('/login',[authController::class, 'login']);
+
+
+//LogOut Route
+
+Route::post('/logout',[authController::class, 'logout'])->name('logout');
+
+
+//Dashboard
+
+Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');

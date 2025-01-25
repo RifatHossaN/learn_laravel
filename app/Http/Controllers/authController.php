@@ -27,4 +27,19 @@ class authController extends Controller
         return redirect()->route('welcome');
 
     }
+
+    public function login(Request $request){
+        $fields = $request->validate([
+            'email' => ['required', 'max:255', 'email'],
+            'password' => ['required']
+        ]);
+
+        if(Auth::attempt($fields, $request->remember)){
+            return redirect()->route('welcome');
+        }else{
+            return back()->withErrors(
+                ['failed'=>"The Email and Password did'nt match"]
+            );
+        }
+    }
 }

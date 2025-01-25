@@ -4,7 +4,7 @@
             <a href="{{route('welcome')}}">home</a>
         </div>
         <div class="flex gap-4">
-            <a href="#">LogIn</a>
+            <a href="{{route('login')}}">LogIn</a>
             <a href="{{route('register')}}">Register</a>
         </div>
     </header>

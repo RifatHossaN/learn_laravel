@@ -10,10 +10,10 @@
     <title>{{env('APP_NAME')}} Welcome</title>
 </head>
 <body>
-    <div class="bg-slate-950 min-h-svh flex flex-col justify-between">
+    <div class="bg-slate-950 min-h-svh flex flex-col">
         <header class="bg-slate-800 text-white flex justify-between p-4">
             <div>
-                <a href="{{route('welcome')}}">home</a>
+                <a href="{{route('posts')}}">home</a>
             </div>
 
             @guest
@@ -46,7 +46,7 @@
             
         </header>
 
-        <main class="h-full p-4">
+        <main class="h-full p-4 ">
             <h1 class="text-teal-300">{{$slot}}</h1>
         </main>
         <footer class="p-4">

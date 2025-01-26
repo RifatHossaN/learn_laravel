@@ -2,11 +2,12 @@
 
 use App\Http\Controllers\authController;
 use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+    return view('posts');
+})->name('posts');
 
 
 //register routers
@@ -35,3 +36,8 @@ Route::post('/logout',[authController::class, 'logout'])->name('logout');
 //Dashboard
 
 Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
+
+
+//post routes 
+
+Route::resource('post',PostController::class);

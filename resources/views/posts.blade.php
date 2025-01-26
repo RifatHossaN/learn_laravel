@@ -1,7 +1,7 @@
 <x-layout>
-    welcome Page <br>
+    Post Page <br>
     @auth
-        welcome {{auth()->user()->username}}! you are logged in
+        welcome {{auth()->user()->username}}! you are logged in. Your latest posts are here.
     @endauth
 
     @guest

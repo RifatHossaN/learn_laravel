@@ -5,10 +5,12 @@ use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('posts');
-})->name('posts');
+// Route::get('/', function () {
+//     return view('posts');
+// })->name('posts');
 
+//redirecting the home/post page
+Route::redirect('/','post')->name('post');
 
 //register routers
 

@@ -13,7 +13,7 @@
     <div class="bg-slate-950 min-h-svh flex flex-col">
         <header class="bg-slate-800 text-white flex justify-between p-4">
             <div>
-                <a href="{{route('posts')}}">home</a>
+                <a href="{{route('post')}}">home</a>
             </div>
 
             @guest

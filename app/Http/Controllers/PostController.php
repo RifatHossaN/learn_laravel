@@ -50,7 +50,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return view('user.showPost', ['post' => $post]);
     }
 
     /**

@@ -3,6 +3,7 @@
     @auth
         <h1 class="text-white text-xl">welcome {{auth()->user()->username}}! you are logged in. Your latest posts are here.
         </h1>
+        <div class="grid grid-cols-2">
         @foreach ($posts as $post)
             <div class="bg-cyan-950 p-4 m-2 text-white flex flex-col gap-3 rounded-lg">
                 <div>
@@ -17,6 +18,7 @@
 
             </div>
         @endforeach
+    </div>
         
     @endauth
 

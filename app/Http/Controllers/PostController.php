@@ -5,11 +5,26 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
+use Illuminate\Routing\Controllers\HasMiddleware;
+use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
-class PostController extends Controller
+class PostController extends Controller implements HasMiddleware
 {
+
+    //adding middlewares
+    public static function middleware(): array
+    {
+        return [
+            new Middleware('auth', except: ['index','show'])
+        ];
+    }
+
+
+
+
     /**
      * Display a listing of the resource.
      */
@@ -33,6 +48,8 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        
+
         //validation
         $fields = $request->validate([
             'title' => ['required', 'max:150'],
@@ -59,6 +76,10 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
+        //validate the user for post
+        Gate::authorize('modify',$post);
+
+        //returning the user
         return view('user.editPost',['post'=>$post]);
     }
 
@@ -67,6 +88,9 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
+        //validate the user for post
+        Gate::authorize('modify',$post);
+
         //validation
         $fields = $request->validate([
             'title' => ['required', 'max:150'],
@@ -87,7 +111,11 @@ class PostController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy(Post $post)
-    {
+    {   
+        //validate the user for post
+        Gate::authorize('modify',$post);
+
+
         $post->delete();
 
         return back()->with(['success'=>'The post was deleted successfully',"bgColor"=>"bg-red-700"]);

@@ -24,7 +24,7 @@ class authController extends Controller
         Auth::login($user);
 
         //redirect
-        return redirect()->route('welcome');
+        return redirect()->route('post');
 
     }
 
@@ -61,8 +61,8 @@ class authController extends Controller
         //regenarating CSRF token
         $request->session()->regenerateToken();
 
-        //redirecting to the welcome/home page
-        return redirect()->route('welcome');
+        //redirecting to the post/home page
+        return redirect()->route('post');
 
 
     }

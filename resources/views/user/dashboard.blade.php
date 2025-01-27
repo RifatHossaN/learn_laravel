@@ -35,7 +35,7 @@
                 <textarea name="body" rows="5" class="rounded text-black px-2
                 @error('body')
                     bg-red-300
-                @enderror"></textarea>
+                @enderror">{{old('body')}}</textarea>
 
                 @error('body')
                     <p class="text-red-400">{{$message}}</p>
@@ -54,12 +54,15 @@
         <div class="grid grid-cols-2">
             @foreach ($posts as $post)
                 <x-postCard :post="$post">
+                    <a href="{{route('post.edit', $post)}}" class="bg-yellow-600 p-1 rounded-lg">update</a>
+
                     <form action="{{route('post.destroy',$post)}}" method="post">
                         @method('DELETE')
                         @csrf
 
                         <button class="bg-red-600 p-1 rounded-lg">delete</button>
                     </form>
+                    
                     
                 </x-postCard>
             @endforeach

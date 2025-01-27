@@ -37,7 +37,7 @@ Route::post('/logout',[authController::class, 'logout'])->name('logout');
 
 //Dashboard
 
-Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
+Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard'); 
 
 
 //post routes 

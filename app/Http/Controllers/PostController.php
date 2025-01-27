@@ -39,9 +39,10 @@ class PostController extends Controller
             'body' => ['required', 'max:255']
         ]);
 
-
+        //create post
         Auth::user()->posts()->create($fields);
 
+        //return back
         return back()->with(["success"=> "Post created successfully.", "bgColor"=>"bg-green-400"]);
     }
 
@@ -58,15 +59,28 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('user.editPost',['post'=>$post]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePostRequest $request, Post $post)
+    public function update(Request $request, Post $post)
     {
-        //
+        //validation
+        $fields = $request->validate([
+            'title' => ['required', 'max:150'],
+            'body' => ['required', 'max:255']
+        ]);
+
+
+        //update post
+        $post->update($fields);
+
+
+        //return back
+        return redirect()->route('dashboard')->with(["success"=> "Post edited successfully.", "bgColor"=>"bg-yellow-500"]);
+    
     }
 
     /**

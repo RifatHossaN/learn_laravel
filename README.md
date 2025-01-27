@@ -48,8 +48,12 @@ Ensure you have the following installed:
     - Duplicate .env.example and rename the copy to .env.
     - Update the .env file with your database credentials and other necessary configurations.
 5. **Generate the application key:**
-
+    ```bash
+    php artisan key:generate
 6. **Run database migrations:**
-
+    ```bash
+    php artisan migrate
 7. **Start the development server:**
-8. 
+    ```bash
+    php artisan serve
+The application will be accessible at http://localhost:8000.

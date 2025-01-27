@@ -42,7 +42,7 @@ class PostController extends Controller
 
         Auth::user()->posts()->create($fields);
 
-        return back()->with(["success"=> "Post created successfully."]);
+        return back()->with(["success"=> "Post created successfully.", "bgColor"=>"bg-green-400"]);
     }
 
     /**
@@ -74,6 +74,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+
+        return back()->with(['success'=>'The post was deleted successfully',"bgColor"=>"bg-red-700"]);
     }
 }

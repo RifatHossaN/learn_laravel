@@ -9,7 +9,7 @@
         <form action="{{route('post.store')}}" method="post" class="p-4 bg-teal-900 rounded-lg my-2 flex flex-col gap-4">
 
             @if (session('success'))
-                <x-flashMsg msg="{{session('success')}}" bg="bg-green-400"/>
+                <x-flashMsg msg="{{session('success')}}" bg="{{session('bgColor')}}"/>
             @endif
             
             <h1>Create new post</h1>
@@ -53,7 +53,15 @@
 
         <div class="grid grid-cols-2">
             @foreach ($posts as $post)
-                <x-postCard :post="$post" />
+                <x-postCard :post="$post">
+                    <form action="{{route('post.destroy',$post)}}" method="post">
+                        @method('DELETE')
+                        @csrf
+
+                        <button class="bg-red-600 p-1 rounded-lg">delete</button>
+                    </form>
+                    
+                </x-postCard>
             @endforeach
         </div>
         <div>

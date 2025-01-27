@@ -14,7 +14,9 @@
     @endif
 
     
-    
+    <div class="flex items-center justify-end">
+        {{$slot}}
+    </div>
     
      
 </div>

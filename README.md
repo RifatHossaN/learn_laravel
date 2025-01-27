@@ -19,7 +19,7 @@ This repository includes various implementations and experiments with Laravel, c
 
 To set up this project locally, follow these steps:
 
-### Prerequisites
+## Prerequisites
 
 Ensure you have the following installed:
 
@@ -28,7 +28,7 @@ Ensure you have the following installed:
 - **Node.js** and **npm**
 - **MySQL** or another preferred database
 
-### Installation
+## Installation
 
 1. **Clone the repository:**
 

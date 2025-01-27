@@ -43,3 +43,5 @@ Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard
 //post routes 
 
 Route::resource('post',PostController::class);
+
+Route::get('/{user}/posts',[dashboardController::class, 'userPosts'])->name('user.posts');

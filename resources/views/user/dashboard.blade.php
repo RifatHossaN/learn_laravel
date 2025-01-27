@@ -9,7 +9,7 @@
         <form action="{{route('post.store')}}" method="post" class="p-4 bg-teal-900 rounded-lg my-2 flex flex-col gap-4">
 
             @if (session('success'))
-                <h1>{{session('success')}}</h1>
+                <x-flashMsg msg="{{session('success')}}" bg="bg-green-400"/>
             @endif
             
             <h1>Create new post</h1>

@@ -41,8 +41,15 @@ Ensure you have the following installed:
    composer install
 
 3. **Install JavaScript dependencies:**
+   ```bash
+   npm install
+
 4. **Set up the environment file:**
+    - Duplicate .env.example and rename the copy to .env.
+    - Update the .env file with your database credentials and other necessary configurations.
 5. **Generate the application key:**
+
 6. **Run database migrations:**
+
 7. **Start the development server:**
 8. 

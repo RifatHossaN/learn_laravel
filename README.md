@@ -35,3 +35,14 @@ Ensure you have the following installed:
    ```bash
    git clone https://github.com/RifatHossaN/learn_laravel.git
    cd learn_laravel
+
+2. **Install PHP dependencies:**
+    ```bash
+   composer install
+
+3. **Install JavaScript dependencies:**
+4. **Set up the environment file:**
+5. **Generate the application key:**
+6. **Run database migrations:**
+7. **Start the development server:**
+8. 

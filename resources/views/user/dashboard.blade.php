@@ -50,6 +50,16 @@
             <button class="rounded p-1 bg-emerald-600 text-white mt-2">Post</button>
         </form>
 
+
+        <div class="grid grid-cols-2">
+            @foreach ($posts as $post)
+                <x-postCard :post="$post" />
+            @endforeach
+        </div>
+        <div>
+            {{$posts->links()}}
+        </div>
+
     @endauth
 
     @guest

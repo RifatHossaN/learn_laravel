@@ -60,7 +60,6 @@ The application will be accessible at http://localhost:8000.
 
 ## Learning Resources
 Throughout this project, I've utilized various resources to enhance my understanding of Laravel:
-
     - [Laravel Official Documentation](https://laravel.com/docs)
     - [YouTube](https://youtube.com/)
     - [Stack Overflow](https://stackoverflow.com/)

@@ -13,11 +13,11 @@
                 
                 <p class="text-sm">{{Str::words($post->body,15,"")}}<b class="font-semibold"> ...See More</b></p>
                  
-
-
-
             </div>
         @endforeach
+    </div>
+    <div>
+        {{$posts->links()}}
     </div>
         
     @endauth
